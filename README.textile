@@ -1,0 +1,68 @@
+h1. In-Field Labels jQuery Plugin
+
+*License:* "Same as jQuery (Dual GPL + MIT)":http://docs.jquery.com/License
+
+*Author:* "Doug Neiner":http://pixelgraphics.us/company
+
+*Size:* Under 1KB Minified and gzipped
+
+h2. Overview
+
+This is a simple plugin that turns properly formatted HTML forms into forms with in-field label support. Labels fade when the field is focussed and disappear when text entry begins. Clearing a field and leaving brings back the label.
+
+h2. Browser Support
+
+IE6+, WebKit Browsers (Safari, Chrome), Firefox 2+
+
+&#42; IE6 requires a background-color be set on the label to match the background of the field.
+
+h2. Know Issues
+
+Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.
+
+h2. Use
+
+h3. HTML
+
+<pre>
+<p>
+  <label for="field_id">Label Text</label><br />
+  <input type="text" name="field_id" value="" id="field_id">
+</p>
+</pre>
+
+h3. CSS
+
+More CSS is needed to position the label nicely over the input or text area element, but since it all depends on how you have styled those elements, only the bare-bones are listed here. Keep in mind any block element can surround the label and input field. <code>&lt;p&gt;</code> is used as an example.
+
+<pre>
+form p { position:relative }
+label  { position:absolute; top:0; left:0}
+</pre>
+
+h3. Javascript
+
+<pre>
+$(document).ready(function(){
+  $("label").inFieldLabels();
+});
+</pre>
+
+h2. Options
+
+Two options can be passed along with the method or set ahead of time for all inFieldLabel controls.
+
+To set them ahead of time, use the following syntax:
+
+<pre>$.inFieldLabels.defaultOptions.optionName = "";</pre>
+
+To pass them at call time, use the following syntax:
+
+<pre>$("label").inFieldLabels({ optionName:value });</pre>
+
+*<code>fadeOpacity:</code> Value between 0.1 and 1.0.*
+When a field is focussed, its label is animated to this opacity. Defaults to 0.5
+
+*<code>fadeDuration:</code> Time in milliseconds*
+When an animation occurs, it uses this setting to determine duration. Defaults to 300
+
