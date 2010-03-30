@@ -126,6 +126,10 @@
 			// Find the referenced input or textarea element
 			var $field = $(
 				"input#" + for_attr + "[type='text']," + 
+				"input#" + for_attr + "[type='search']," + 
+				"input#" + for_attr + "[type='tel']," + 
+				"input#" + for_attr + "[type='url']," + 
+				"input#" + for_attr + "[type='email']," + 
 				"input#" + for_attr + "[type='password']," + 
 				"textarea#" + for_attr
 				);
