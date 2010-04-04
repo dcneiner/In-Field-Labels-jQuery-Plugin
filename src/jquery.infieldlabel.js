@@ -44,6 +44,10 @@
 				// Use of a namespace (.infieldlabel) allows us to
 				// unbind just this method later
 				base.hideOnChange(e);
+			  }).bind('paste', function(e){
+			      // Since you can not paste an empty string we can assume
+			      // that the fieldis not empty and the label can be cleared.
+			      base.setOpacity(0.0);
 			}).change(function(e){
 				base.checkForEmpty();
 			}).bind('onPropertyChange', function(){
