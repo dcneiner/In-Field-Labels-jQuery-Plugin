@@ -6,6 +6,20 @@ h1. In-Field Labels jQuery Plugin
 
 *Size:* Under 1KB Minified and gzipped
 
+h2. esumerfd Update
+
+This fork of Doug's in-field solution adds support for the browser paste operation.
+
+The in-field-label is implemented as a label presented over the top of the text field. The label tag does not support a paste operation, however, depending on your CSS definitions there may be a few pixels around the edge of the label that will allow the paste context menu option to appear and when used no event is captured by this extension to clear the label text.
+
+This fork adds a handler for the paste event on the text field so that we can clear the label.
+
+Note that the implementation just clears the label blindley. No check is made for text field contents. There are two reasons for this:
+
+-  when the paste event fires the data has not be entered into the text field value yet so any comparison with empty will fail anyway.
+
+-  The worst case senario would be the pasting of a single space to the text field. There is no way to copy/cut an empty string so all a user can do is paste a single space which should remove the label anyway.
+
 h2. Overview
 
 This is a simple plugin that turns properly formatted HTML forms into forms with in-field label support. Labels fade when the field is focussed and disappear when text entry begins. Clearing a field and leaving brings back the label.
