@@ -1,24 +1,12 @@
 h1. In-Field Labels jQuery Plugin
 
+*Version:* 0.1.2
+
 *License:* "Same as jQuery (Dual GPL + MIT)":http://docs.jquery.com/License
 
 *Author:* "Doug Neiner":http://pixelgraphics.us/company
 
 *Size:* Under 1KB Minified and gzipped
-
-h2. esumerfd Update
-
-This fork of Doug's in-field solution adds support for the browser paste operation.
-
-The in-field-label is implemented as a label presented over the top of the text field. The label tag does not support a paste operation, however, depending on your CSS definitions there may be a few pixels around the edge of the label that will allow the paste context menu option to appear and when used no event is captured by this extension to clear the label text.
-
-This fork adds a handler for the paste event on the text field so that we can clear the label.
-
-Note that the implementation just clears the label blindley. No check is made for text field contents. There are two reasons for this:
-
--  when the paste event fires the data has not be entered into the text field value yet so any comparison with empty will fail anyway.
-
--  The worst case senario would be the pasting of a single space to the text field. There is no way to copy/cut an empty string so all a user can do is paste a single space which should remove the label anyway.
 
 h2. Overview
 
@@ -30,7 +18,7 @@ IE6+, WebKit Browsers (Safari, Chrome), Firefox 2+
 
 &#42; IE6 requires a background-color be set on the label to match the background of the field.
 
-h2. Know Issues
+h2. Known Issues
 
 Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.
 
@@ -80,3 +68,26 @@ When a field is focussed, its label is animated to this opacity. Defaults to 0.5
 *<code>fadeDuration:</code> Time in milliseconds*
 When an animation occurs, it uses this setting to determine duration. Defaults to 300
 
+h2. Paste Support via "esumerfd":http://github.com/esumerfd
+
+The in-field-label is implemented as a label presented over the top of the text field (or under, depending on the CSS used). The label tag does not support a paste operation, but the input element does. Depending on your CSS definitions there may be a few pixels around the edge of the label that will allow the paste context menu option to appear, or the entire label may be below the input also allowing the context menu. When the paste event is used, this plugin captures it and clears out the label. _(Note: this only works in browsers that fire a paste event.)_
+
+Note that the implementation just clears the label blindly. No check is made for text field contents. There are two reasons for this:
+
+* When the paste event fires the data has not be entered into the text field value yet so any comparison with empty will fail anyway.
+
+*  The worst case senario would be the pasting of a single space to the text field. There is no way to copy/cut an empty string so all a user can do is paste a single space which should remove the label anyway.
+
+h2. Changelog
+
+*Version 0.1.2*
+
+* Added support for a <tt>paste</tt> event. _Special thanks to "esumerfd":http://github.com/esumerfd for contributing this improvement._
+
+*Version 0.1.1*
+
+* Added support for HTML5 text fields: <tt>search</tt>, <tt>tel</tt>, <tt>url</tt>, <tt>email</tt>. _Special thanks to <a href="http://github.com/holizz">Tom Adams (holizz)</a> for contributing this improvement._
+
+*Version 0.1*
+
+* Initial Release
