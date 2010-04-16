@@ -82,7 +82,7 @@ h2. Changelog
 
 *Version 0.1.2*
 
-* Added support for a <tt>paste</tt> event. _Special thanks to "esumerfd":http://github.com/esumerfd for contributing this improvement._
+* Added support for a <tt>paste</tt> event. _Special thanks to "Ed Sumerfield (esumerfd)":http://github.com/esumerfd for contributing this improvement._
 
 *Version 0.1.1*
 
