@@ -52,6 +52,8 @@
         base.checkForEmpty();
       }).bind('onPropertyChange', function () {
         base.checkForEmpty();
+      }).bind('keyup.infieldlabel', function () {
+        base.checkForEmpty()
       });
     };
 
