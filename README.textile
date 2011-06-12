@@ -1,6 +1,6 @@
 h1. In-Field Labels jQuery Plugin
 
-*Version:* 0.1.2
+*Version:* 0.1.5
 
 *License:* "Same as jQuery (Dual GPL + MIT)":http://docs.jquery.com/License
 
@@ -20,7 +20,7 @@ IE6+, WebKit Browsers (Safari, Chrome), Firefox 2+
 
 h2. Known Issues
 
-Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.
+Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms. (FIXED in v1.1.5 update on @zawaideh fork)
 
 h2. Use
 
@@ -79,6 +79,10 @@ Note that the implementation just clears the label blindly. No check is made for
 *  The worst case senario would be the pasting of a single space to the text field. There is no way to copy/cut an empty string so all a user can do is paste a single space which should remove the label anyway.
 
 h2. Changelog
+
+*Version 0.1.5*
+
+* Fixes to problems with autocomplete on first document load and while inputting data
 
 *Version 0.1.2*
 
