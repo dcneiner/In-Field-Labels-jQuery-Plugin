@@ -30,11 +30,14 @@
       // Merge supplied options with default options
       base.options = $.extend({}, $.InFieldLabels.defaultOptions, options);
 
-      // Check if the field is already filled in
-      if (base.$field.val() !== "") {
-        base.$label.hide();
-        base.showing = false;
-      }
+      // Check if the field is already filled in 
+      // add a short delay to handle autocomplete
+      setTimeout(function() {
+        if (base.$field.val() !== "") {
+          base.$label.hide();
+          base.showing = false;
+        }
+      }, 50);
 
       base.$field.focus(function () {
         base.fadeOnFocus();
