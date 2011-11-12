@@ -37,7 +37,7 @@
           base.$label.hide();
           base.showing = false;
         }
-      }, 50);
+      }, 200);
 
       base.$field.focus(function () {
         base.fadeOnFocus();
