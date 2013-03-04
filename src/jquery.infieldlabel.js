@@ -129,14 +129,14 @@
       if (!for_attr) {
         return; // Nothing to attach, since the for field wasn't used
       }
-      // Restrict input type
-      restrict_type = $.inArray($('input#'+for_attr).prop('type'), ["text","search","tel","url","email","password"]);
 
       // Find the referenced input or textarea element
       $field = $(
         "input#" + for_attr + "," +
         "textarea#" + for_attr
       );
+      // Restrict input type
+      restrict_type = $.inArray($field.prop('type'), ["text","search","tel","url","email","password","textarea"]);
 
       if ($field.length === 0 || restrict_type === -1) {
         return; // Again, nothing to attach
