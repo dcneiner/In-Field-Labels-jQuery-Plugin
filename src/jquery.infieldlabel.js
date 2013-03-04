@@ -2,7 +2,7 @@
  * @license In-Field Label jQuery Plugin
  * http://fuelyourcoding.com/scripts/infield.html
  *
- * Copyright (c) 2009-2010 Doug Neiner
+ * Copyright (c) 2009-2013 Doug Neiner
  * Dual licensed under the MIT and GPL licenses.
  * Uses the same license as jQuery, see:
  * http://docs.jquery.com/License
@@ -125,10 +125,12 @@
       // Find input or textarea based on for= attribute
       // The for attribute on the label must contain the ID
       // of the input or textarea element
-      var for_attr = $(this).attr('for'), $field;
+      var for_attr = $(this).attr('for'), $field, restrict_type;
       if (!for_attr) {
         return; // Nothing to attach, since the for field wasn't used
       }
+      // Restrict input type
+      restrict_type = $.inArray($('input#'+for_attr).prop('type'), ["text","search","tel","url","email","password"]);
 
       // Find the referenced input or textarea element
       $field = $(
@@ -136,11 +138,11 @@
         "textarea#" + for_attr
       );
 
-      if ($field.length === 0) {
+      if ($field.length === 0 || restrict_type === -1) {
         return; // Again, nothing to attach
       } 
 
-      // Only create object for input[text], input[password], or textarea
+      // Only create object for matched input types and textarea
       (new $.InFieldLabels(this, $field[0], options));
     });
   };
