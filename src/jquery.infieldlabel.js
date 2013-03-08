@@ -106,7 +106,7 @@
   $.InFieldLabels.defaultOptions = {
     fadeOpacity: 0.5, // Once a field has focus, how transparent should the label be
     fadeDuration: 300, // How long should it take to animate from 1.0 opacity to the fadeOpacity
-    enabledInputTypes: [ "text", "search", "tel", "url", "email", "password", "textarea" ]
+    enabledInputTypes: [ "text", "search", "tel", "url", "email", "password", "number", "textarea" ]
   };
 
 
