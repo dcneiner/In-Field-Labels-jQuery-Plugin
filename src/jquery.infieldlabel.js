@@ -116,11 +116,14 @@
 
   $.InFieldLabels.defaultOptions = {
     fadeOpacity: 0.5, // Once a field has focus, how transparent should the label be
-    fadeDuration: 300 // How long should it take to animate from 1.0 opacity to the fadeOpacity
+    fadeDuration: 300, // How long should it take to animate from 1.0 opacity to the fadeOpacity
+    enabledInputTypes: [ "text", "search", "tel", "url", "email", "password", "textarea" ]
   };
 
 
   $.fn.inFieldLabels = function (options) {
+    var allowed_types = options && options.enabledInputTypes || $.InFieldLabels.defaultOptions.enabledInputTypes;
+
     return this.each(function () {
       // Find input or textarea based on for= attribute
       // The for attribute on the label must contain the ID
@@ -131,14 +134,15 @@
       }
 
       // Find the referenced input or textarea element
-      $field = $(
-        "input#" + for_attr + "," +
-        "textarea#" + for_attr
-      );
-      // Restrict input type
-      restrict_type = $.inArray($field.prop('type'), ["text","search","tel","url","email","password","textarea"]);
+      $field = $( "#" + for_attr );
+      if ( !$field.length ) {
+        return; // No element found
+      }
 
-      if ($field.length === 0 || restrict_type === -1) {
+      // Restrict input type
+      restrict_type = $.inArray( $field.attr('type'), allowed_types );
+
+      if ( restrict_type === -1 && !$field.is( "textarea" )) {
         return; // Again, nothing to attach
       } 
 
