@@ -63,10 +63,13 @@ To pass them at call time, use the following syntax:
 <pre>$("label").inFieldLabels({ optionName:value });</pre>
 
 *<code>fadeOpacity:</code> Value between 0.1 and 1.0.*
-When a field is focussed, its label is animated to this opacity. Defaults to 0.5
+When a field is focussed, its label is animated to this opacity. Defaults to <code>0.5</code>
 
 *<code>fadeDuration:</code> Time in milliseconds*
-When an animation occurs, it uses this setting to determine duration. Defaults to 300
+When an animation occurs, it uses this setting to determine duration. Defaults to <code>300</code>
+
+*<code>enabledInputTypes:</code> Array of input types to allow*
+It is not normally desireable for <code>checkbox</code> and <code>radio</code> input types to have their labels fade out. This allows you to control which input types are allowed. Defaults to: <code>[ "text", "search", "tel", "url", "email", "password", "textarea" ]</code>
 
 h2. Paste Support via "esumerfd":http://github.com/esumerfd
 
@@ -79,6 +82,12 @@ Note that the implementation just clears the label blindly. No check is made for
 *  The worst case senario would be the pasting of a single space to the text field. There is no way to copy/cut an empty string so all a user can do is paste a single space which should remove the label anyway.
 
 h2. Changelog
+
+*Current changes in master*
+
+* Added support for `enabledInputTypes` and optimized field filtering. _Special thanks to "Daniel Abernathy (dabernathy89)":https://github.com/dabernathy89 for contributing this improvement._
+* Added (anvil):http://anviljs.com build system
+* Switched to uglify for minification (Via anvil.uglify)
 
 *Version 0.1.2*
 

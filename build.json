@@ -1,0 +1,26 @@
+{
+	"anvil.uglify": {
+		"all": true
+	},
+	"anvil.jshint": {
+		"include": [
+			"jquery.infieldlabel.js"
+		],
+		"options": {
+			"globals": {
+				"jQuery": false
+			},
+			"browser": true,
+			"strict": false,
+			"undef": true,
+			"unused": true
+		}
+	},
+	"httpPaths": {
+		"/": "sample",
+		"/js": "lib"
+	},
+	"dependencies": [
+		"anvil.uglify", "anvil.jshint"
+	]
+}
