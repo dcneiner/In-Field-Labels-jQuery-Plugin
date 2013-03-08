@@ -39,7 +39,8 @@ More CSS is needed to position the label nicely over the input or text area elem
 
 <pre>
 form p { position:relative }
-label  { position:absolute; top:0; left:0}
+form p br { display: none }
+label  { position:absolute; top:0; left:0 }
 </pre>
 
 h3. Javascript
