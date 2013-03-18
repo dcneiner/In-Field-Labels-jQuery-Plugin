@@ -31,7 +31,7 @@ h3. HTML
 <pre>
 <p>
   <label for="field_id">Label Text</label><br />
-  <input type="text" name="field_id" value="" id="field_id">
+  <input type="text" name="field_id" value="" id="field_id" placeholder="">
 </p>
 </pre>
 
