@@ -19,13 +19,16 @@
       // Merge supplied options with default options
       base.options = $.extend({}, $.InFieldLabels.defaultOptions, options);
 
-      // Check if the field is already filled in
-      if (base.$field.val() !== "") {
-        base.$label.hide();
-        base.showing = false;
-      } else {
-        base.$label.show();
-      }
+      // Check if the field is already filled in 
+      // add a short delay to handle autocomplete
+      setTimeout(function() {
+        if (base.$field.val() !== "") {
+          base.$label.hide();
+          base.showing = false;
+        } else {
+          base.$label.show();
+        }
+      }, 200);
 
       base.$field.focus(function () {
         base.fadeOnFocus();
@@ -42,6 +45,8 @@
       }).change(function () {
         base.checkForEmpty();
       }).bind('onPropertyChange', function () {
+        base.checkForEmpty();
+      }).bind('keyup.infieldlabel', function () {
         base.checkForEmpty();
       });
     };

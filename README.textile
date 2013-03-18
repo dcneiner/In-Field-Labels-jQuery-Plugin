@@ -20,7 +20,7 @@ IE6+, WebKit Browsers (Safari, Chrome), Firefox 2+
 
 h2. Known Issues
 
-Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.
+Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms. (FIXED in v1.1.5 update on @zawaideh fork)
 
 h2. Use
 
@@ -87,6 +87,7 @@ h2. Changelog
 *Current changes in master*
 
 * Added support for `enabledInputTypes` and optimized field filtering. _Special thanks to "Daniel Abernathy (dabernathy89)":https://github.com/dabernathy89 for contributing this improvement._
+* Fixes to problems with autocomplete on first document load and while inputting data
 * Added (anvil):http://anviljs.com build system
 * Switched to uglify for minification (Via anvil.uglify)
 * Added documentation about hiding the <tt>&lt;br&gt;</tt> shown in the examples
