@@ -2,7 +2,7 @@
 	"author": "Doug Neiner <doug@dougneiner.com> (http://code.dougneiner.com)",
 	"name": "jquery.infieldlabel",
 	"description": "A simple jQuery plugin for adding labels that sit over a form field and fade away when the fields are populated.",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/dcneiner/In-Field-Labels-jQuery-Plugin.git"

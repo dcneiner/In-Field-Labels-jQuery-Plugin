@@ -1,6 +1,6 @@
 h1. In-Field Labels jQuery Plugin
 
-*Version:* 0.1.2
+*Version:* 0.1.3
 
 *License:* "Same as jQuery (Dual GPL + MIT)":http://docs.jquery.com/License
 
@@ -89,7 +89,7 @@ Note that the implementation just clears the label blindly. No check is made for
 
 h2. Changelog
 
-*Current changes in master*
+*Version 0.1.3*
 
 * Added support for polling (to aid in pesky autocomplete overlap issues). _Special thanks to "@fakeartist":https://github.com/fakeartist for contributing the basis of this solution._
 * Added support for `enabledInputTypes` and optimized field filtering. _Special thanks to "Daniel Abernathy (dabernathy89)":https://github.com/dabernathy89 for contributing this improvement._
