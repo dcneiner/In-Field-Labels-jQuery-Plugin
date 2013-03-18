@@ -27,6 +27,7 @@
           base.showing = false;
         } else {
           base.$label.show();
+          base.showing = true;
         }
       }, 200);
 
