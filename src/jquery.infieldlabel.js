@@ -16,6 +16,8 @@
     base.showing = true;
 
     base.init = function () {
+      var initialSet;
+
       // Merge supplied options with default options
       base.options = $.extend({}, $.InFieldLabels.defaultOptions, options);
 
@@ -50,6 +52,17 @@
       }).bind('keyup.infieldlabel', function () {
         base.checkForEmpty();
       });
+
+      if ( base.options.pollDuration > 0 ) {
+        initialSet = setInterval( function () {
+        if (base.$field.val() !== "") {
+          base.$label.hide();
+          base.showing = false;
+          clearInterval( initialSet );
+        }
+      }, base.options.pollDuration );
+
+      }
     };
 
     // If the label is currently showing
@@ -114,6 +127,7 @@
   $.InFieldLabels.defaultOptions = {
     fadeOpacity: 0.5, // Once a field has focus, how transparent should the label be
     fadeDuration: 300, // How long should it take to animate from 1.0 opacity to the fadeOpacity
+    pollDuration: 0, // If set to a number greater than zero, this will poll until content is detected in a field
     enabledInputTypes: [ "text", "search", "tel", "url", "email", "password", "number", "textarea" ]
   };
 

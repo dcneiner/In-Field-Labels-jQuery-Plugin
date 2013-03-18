@@ -36,7 +36,8 @@
 			when text entry begins. Clearing a field and leaving brings back the label.</p>
 			<p><strong>Browser Support:</strong><br />IE6+, WebKit Browsers (Safari, Chrome), Firefox 2+ <small>* IE6 requires a background-color be set on the label to match the background of the field.</small></p>
 			<p><strong>Known Issues:</strong><br />
-			Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.</p>
+			<del>Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.</del> (Fixed thanks to @zawaideh!)</p>
+			<p>There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing <tt>pollDuration</tt> with a number larger than 0. If you want to turn polling on globally for your usage, change the default: <tt>$.inFieldLabels.defaultOptions.pollDuration = 300</tt>. (Thanks to @fakeartist for the basis for this feature!)</p>
 		</p>
 	</div>
 	<div class="body"><h2>Samples</h2></div>
@@ -102,7 +103,7 @@ $(document).ready(function(){
 			
 		</p>
 		<h2>Options</h2>
-		<p>Two options can be passed along with the method or set ahead of time for all inFieldLabel controls.</p>
+		<p>Options can be passed along with the method or set ahead of time for all inFieldLabel controls.</p>
 		<p>To set them ahead of time, use the following syntax:
 			<pre>
 $.inFieldLabels.defaultOptions.optionName = "";</pre>
@@ -113,6 +114,8 @@ $("label").inFieldLabels({ optionName:value });</pre>
 			</p>
 		<p><tt>fadeOpacity:</tt> <strong>Value between 0.1 and 1.0.</strong><br />When a field is focussed, its label is animated to this opacity. Defaults to <tt>0.5</tt></p>
 		<p><tt>fadeDuration:</tt> <strong>Time in milliseconds</strong><br />When an animation occurs, it uses this setting to determine duration. Defaults to <tt>300</tt></p>
+		<p><tt>pollDuration:</tt> <strong>Time in milliseconds or `0` to disable polling</strong><br />
+		If set to a number greater than zero, the code will check the value of the field at the specified interval until content is detected in this field. Once content is detected or entered, the polling stops for this field.</p>
 		<p><tt>enabledInputTypes:</tt> <strong>Array of input types to allow</strong><br />It is not normally desireable for <tt>checkbox</tt> and <tt>radio</tt> input types to have their labels fade out. This allows you to control which input types are allowed. Defaults to: <tt>[ "text", "search", "tel", "url", "email", "password", "textarea" ]</tt></p>
 		<h2>Changelog</h2>
 		<p><strong>Version 0.1.2</strong></p>
