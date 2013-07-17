@@ -20,6 +20,9 @@
 
       // Merge supplied options with default options
       base.options = $.extend({}, $.InFieldLabels.defaultOptions, options);
+	  
+	  // add .infield-label to the label
+	  base.$label.addClass('infield-label');
 
       // Check if the field is already filled in 
       // add a short delay to handle autocomplete
