@@ -74,6 +74,8 @@ When an animation occurs, it uses this setting to determine duration. Defaults t
 *<code>pollDuration:</code> Time in milliseconds or `0` to disable polling*
 If set to a number greater than zero, the code will check the value of the field at the specified interval until content is detected in this field. Once content is detected or entered, the polling stops for this field.
 
+*<code>className:</code> A class to be applied to each label that is enhanced. Set to `false` or `""` and a class will not be set. Defaults to <code>infield-label</code>
+
 *<code>enabledInputTypes:</code> Array of input types to allow*
 It is not normally desireable for <code>checkbox</code> and <code>radio</code> input types to have their labels fade out. This allows you to control which input types are allowed. Defaults to: <code>[ "text", "search", "tel", "url", "email", "password", "textarea" ]</code>
 

@@ -21,8 +21,10 @@
       // Merge supplied options with default options
       base.options = $.extend({}, $.InFieldLabels.defaultOptions, options);
 
-      // Add provided class name to the label
-      base.$label.addClass(base.options.className);
+      // Add provided class name to the label, if set
+      if ( base.options.className ) {
+        base.$label.addClass(base.options.className);
+      }
 
       // Check if the field is already filled in 
       // add a short delay to handle autocomplete
