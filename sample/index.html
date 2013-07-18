@@ -116,9 +116,13 @@ $("label").inFieldLabels({ optionName:value });</pre>
 		<p><tt>fadeDuration:</tt> <strong>Time in milliseconds</strong><br />When an animation occurs, it uses this setting to determine duration. Defaults to <tt>300</tt></p>
 		<p><tt>pollDuration:</tt> <strong>Time in milliseconds or `0` to disable polling</strong><br />
 		If set to a number greater than zero, the code will check the value of the field at the specified interval until content is detected in this field. Once content is detected or entered, the polling stops for this field.</p>
-		<p><tt>className:</tt> A class to be applied to each label that is enhanced. Set to `false` or `""` and a class will not be set. Defaults to <tt>infield-label</tt></p>
+		<p><tt>className:</tt> A class to be applied to each label that is enhanced. Set to `false` or `""` and a class will not be set. Defaults to <tt>false</tt></p>
 		<p><tt>enabledInputTypes:</tt> <strong>Array of input types to allow</strong><br />It is not normally desireable for <tt>checkbox</tt> and <tt>radio</tt> input types to have their labels fade out. This allows you to control which input types are allowed. Defaults to: <tt>[ "text", "search", "tel", "url", "email", "password", "textarea" ]</tt></p>
 		<h2>Changelog</h2>
+		<p><strong>Version 0.1.4</strong></p>
+		<ul>
+			<li>Add support for a class name to be applied to enhanced label elements. Off by default to not break existing implementations should a existing class name be in use. <em>Special thanks to <a href="https://github.com/captainreuben" title="@captainreuben">Benjamin Leveritt</a> for contributing this addition.</em></li>
+		</ul>
 		<p><strong>Version 0.1.3</strong></p>
 		<ul>
 			<li>Added support for polling (to aid in pesky autocomplete overlap issues). <em>Special thanks to <a href="https://github.com/fakeartist">@fakeartist</a> for contributing the basis of this solution.</em></li>
