@@ -79,10 +79,14 @@
       }
     };
 
-    base.setOpacity = function (opacity) {
-      base.$label.stop().animate({ opacity: opacity }, base.options.fadeDuration);
-      base.showing = (opacity > 0.0);
-    };
+     base.setOpacity = function (opacity) {
+            base.$label.stop().animate({ opacity: opacity }, base.options.fadeDuration, function () {
+                if (opacity == 0.0) {
+                    base.$label.hide();
+                }
+            });
+            base.showing = (opacity > 0.0);
+        };
 
     // Checks for empty as a fail safe
     // set blur to true when passing from
