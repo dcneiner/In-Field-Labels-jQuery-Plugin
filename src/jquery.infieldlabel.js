@@ -81,7 +81,7 @@
 
      base.setOpacity = function (opacity) {
             base.$label.stop().animate({ opacity: opacity }, base.options.fadeDuration, function () {
-                if (opacity == 0.0) {
+                if (opacity === 0.0) {
                     base.$label.hide();
                 }
             });

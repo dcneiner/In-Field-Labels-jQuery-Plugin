@@ -91,6 +91,10 @@ Note that the implementation just clears the label blindly. No check is made for
 
 h2. Changelog
 
+*Current in Master*
+
+* Fixed issue where label could still be selected even with opacity set to 0.0. _Special thanks to "Eric Kelly (@clearbucketLabs)":https://github.com/clearbucketLabs for contributing this fix._
+
 *Version 0.1.4*
 
 * Add support for a class name to be applied to enhanced label elements. Off by default to not break existing implementations should a existing class name be in use. _Special thanks to "Benjamin Leveritt (@captainreuben)":https://github.com/captainreuben for contributing this addition._
