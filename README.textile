@@ -22,7 +22,7 @@ h2. Known Issues
 
 <del>Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.</del> (Fixed thanks to @zawaideh!)
 
-There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing `pollDuration` with a number larger than 0. If you want to turn polling on globally for your usage, change the default: `$.inFieldLabels.defaultOptions.pollDuration = 300`. (Thanks to @fakeartist for the basis for this feature!)
+There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing `pollDuration` with a number larger than 0. If you want to turn polling on globally for your usage, change the default: `$.InFieldLabels.defaultOptions.pollDuration = 300`. (Thanks to @fakeartist for the basis for this feature!)
 
 h2. Use
 
