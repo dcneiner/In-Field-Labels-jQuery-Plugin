@@ -1,6 +1,6 @@
 h1. In-Field Labels jQuery Plugin
 
-*Version:* 0.1.3
+*Version:* 0.1.4
 
 *License:* "Same as jQuery (Dual GPL + MIT)":http://docs.jquery.com/License
 
