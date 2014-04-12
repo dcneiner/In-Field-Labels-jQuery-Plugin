@@ -74,7 +74,7 @@ form, form fieldset input, form fieldset textarea, form label {
 	font-size: 12pt;
 }
 form p { position: relative; margin: 10px 0;}
-form p label { position: absolute; top: 0; left: 0;}
+form p label { position: absolute; top: 0; left: 0; cursor:	text;}
 form p br {display: none;}
 
 
