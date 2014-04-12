@@ -1,6 +1,6 @@
 {
   "name": "jquery-infield-label",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": [
     "lib/jquery.infieldlabel.js",
     "lib/jquery.infieldlabel.min.js"
@@ -8,5 +8,8 @@
   "ignore": [
     "**/.*",
     "sample"
-  ]
+  ],
+  "dependencies": {
+    "jquery": ">=1.3.2"
+  }
 }

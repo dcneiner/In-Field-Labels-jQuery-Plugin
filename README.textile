@@ -1,6 +1,6 @@
 h1. In-Field Labels jQuery Plugin
 
-*Version:* 0.1.4
+*Version:* 0.1.5
 
 *License:* "Same as jQuery (Dual GPL + MIT)":http://docs.jquery.com/License
 
@@ -91,8 +91,9 @@ Note that the implementation just clears the label blindly. No check is made for
 
 h2. Changelog
 
-*Current in Master*
+*Version 0.1.5*
 
+* Added `bower.json` _Special thanks to "Stephen Way (@stephenway)"(https://github.com/stephenway) for contributing this file._
 * Fixed issue where label could still be selected even with opacity set to 0.0. _Special thanks to "Eric Kelly (@clearbucketLabs)":https://github.com/clearbucketLabs for contributing this fix._
 
 *Version 0.1.4*
